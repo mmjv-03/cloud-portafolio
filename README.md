@@ -13,7 +13,7 @@ La infraestructura implementa:
 - **Amazon S3**  
   - Bucket configurado para hosting estático  
   - Políticas de seguridad con *Least Privilege*  
-  - Bloqueo de acceso público innecesario  
+  - Bloqueo de acceso público 
 
 - **AWS CloudFront**  
   - Distribución CDN global  
@@ -47,7 +47,7 @@ La infraestructura implementa:
 - Automatizar configuración base (si se desea en versiones futuras).  
 - Demostrar habilidades prácticas de AWS para roles Cloud/Seguridad.
 
----
 
-## 📁 Estructura del Repositorio
+
+
 
