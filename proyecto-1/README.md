@@ -147,5 +147,5 @@ https://cookieprueba.link/
 
 ## 📬 Contact
 
-LinkedIn: *your-link*  
-GitHub: *your-username*
+LinkedIn: https://www.linkedin.com/in/victor-matos-188769242?utm_source=share_via&utm_content=profile&utm_medium=member_ios 
+GitHub: Victor Matos
