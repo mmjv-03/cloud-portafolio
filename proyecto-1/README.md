@@ -145,6 +145,89 @@ https://cookieprueba.link/
 
 ---
 
+## 🔐 Recommended Security Enhancements
+
+To further strengthen this architecture and align with AWS security best practices, the following enhancements are recommended:
+
+### **1. AWS WAF (Web Application Firewall)**
+Attach AWS WAF to the CloudFront distribution to protect against:
+- SQL Injection  
+- Cross-Site Scripting (XSS)  
+- OWASP Top 10 attacks  
+- Malicious bots  
+
+---
+
+### **2. SSE-KMS Encryption with Customer-Managed Keys (CMKs)**
+Enable **SSE-KMS** encryption on the S3 bucket to:
+- Enforce key rotation  
+- Restrict access using key policies  
+- Audit encryption/decryption events via CloudTrail  
+
+---
+
+### **3. CloudFront Origin Shield**
+Use **Origin Shield** to:
+- Add an extra caching layer  
+- Protect your S3 origin from high-load bursts  
+- Improve cache hit ratio  
+
+---
+
+### **4. IAM Least-Privilege Access**
+Ensure all IAM policies follow the least-privilege principle:
+- Limit permissions to only required actions  
+- Avoid broad permissions like `s3:*`  
+- Prefer IAM roles over long-term access keys  
+
+---
+
+### **5. Block All Public Access to S3**
+Even though the site is public, the S3 bucket must not be public.  
+All access should go through CloudFront.
+
+Benefits:
+- Enforces WAF  
+- Prevents bypassing CloudFront  
+- Reduces attack surface  
+
+---
+
+### **6. CloudFront Geo-Restrictions**
+Optionally block traffic from unwanted geographic regions to reduce exposure to global threats.
+
+---
+
+### **7. Monitoring & Logging (CloudTrail + CloudWatch)**
+Enable:
+- **CloudTrail** for auditing API activity  
+- **CloudWatch Alarms** for unauthorized access attempts  
+- **WAF logs** for blocked or suspicious requests  
+
+---
+
+### **8. AWS Config Security Rules**
+Use AWS Config to detect misconfigurations such as:
+- Public S3 buckets  
+- Missing encryption  
+- Overly permissive IAM policies  
+- Misconfigured CloudFront distributions  
+
+---
+
+### **9. CloudFront Access Logging**
+Store CloudFront logs in a secure S3 bucket for:
+- Traffic analysis  
+- Incident response  
+- Security forensics  
+
+---
+
+### **10. Route 53 DNSSEC**
+Enable **DNSSEC** in Route 53 to protect your domain from DNS spoofing and tampering.
+
+---
+
 ## 📬 Contact
 
 LinkedIn: https://www.linkedin.com/in/victor-matos-188769242?utm_source=share_via&utm_content=profile&utm_medium=member_ios 
