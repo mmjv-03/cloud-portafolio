@@ -1,120 +1,151 @@
-# 🚀 Proyecto 1: Hosting Estático en AWS con S3, CloudFront y Route 53
+# 🌐 Project 1 — Static Website Hosting on AWS with S3, CloudFront, ACM, and Route 53
 
-Este proyecto demuestra la creación de una arquitectura en AWS para alojar un sitio web estático utilizando **Amazon S3**, distribuido globalmente mediante **Amazon CloudFront**, y con dominio administrado en **Route 53**.
+This project demonstrates a fully deployed, secure, and production-ready static website architecture on AWS.  
+It follows industry best practices for availability, performance, and cloud security.
 
-Es un proyecto orientado a prácticas reales de **Cloud Computing** y **Cloud Security**, ideal para un portafolio técnico profesional.
+Technologies used:
 
----
-
-## 📌 Arquitectura Propuesta
-
-La infraestructura implementa:
-
-- **Amazon S3**  
-  - Bucket configurado para hosting estático  
-  - Políticas de seguridad con *Least Privilege*  
-  - Bloqueo de acceso público 
-
-- **AWS CloudFront**  
-  - Distribución CDN global  
-  - Origin Access Control (OAC) para proteger el bucket  
-  - HTTPS habilitado  
-  - Compresión automática  
-  - Caching configurable
-
-- **Route 53 (Opcional)**  
-  - Hosted Zone  
-  - Registro A o CNAME apuntando a CloudFront  
-  - Gestión DNS segura  
+- **Amazon S3** — Static hosting  
+- **Amazon CloudFront** — Global CDN  
+- **AWS Certificate Manager (ACM)** — SSL/TLS certificates  
+- **Amazon Route 53** — DNS & domain management  
+- **IAM + OAC** — Secure access control  
+- **Versioning** — Content protection
 
 ---
 
-## 🛠️ Servicios utilizados
+## 🎯 Project Objective
 
-| Servicio | Uso |
-|---------|-----|
-| **S3** | Hosting estático y almacenamiento |
-| **CloudFront** | Distribución CDN global |
-| **IAM** | Políticas mínimas necesarias |
-| **Route 53** | DNS y dominio (opcional) |
+Deploy a scalable, secure, and cost-effective static website using fully managed AWS services.
 
----
+This project showcases skills in:
 
-## 🧩 Objetivos del Proyecto
-
-- Implementar un sitio web estático seguro y escalable.  
-- Asegurar el acceso al bucket mediante OAC.  
-- Automatizar configuración base (si se desea en versiones futuras).  
-- Demostrar habilidades prácticas de AWS para roles Cloud/Seguridad.
+- Cloud architecture  
+- AWS security  
+- DNS & SSL certificate management  
+- Serverless design  
+- Documentation and best-practice implementation  
 
 ---
 
-## 📁 Estructura del Repositorio
+## 📌 High-Level Architecture (Including Route 53 & ACM)
 
-proyecto-1/
-│── README.md # Documentación del proyecto
-│── arquitectura.png # Diagrama de arquitectura (opcional)
-│── sitio/ # Carpeta con archivos HTML/CSS/JS
+![Architecture Diagram](Diagram.png)
 
 
 ---
 
+## 🛠 AWS Services Overview
+
+| Service | Purpose |
+|---------|---------|
+| **Amazon S3** | Static file hosting. Bucket remains private using OAC. |
+| **CloudFront** | Global CDN delivering low-latency content over HTTPS. |
+| **AWS Certificate Manager (ACM)** | Provisioning and managing SSL certificates. DNS validation. |
+| **Route 53** | DNS management, domain routing, Alias records to CloudFront. |
+| **IAM** | Secure access control via OAC and policies. |
+| **S3 Versioning** | Protects against accidental deletions/overwrites. |
 
 ---
 
-## 🧪 Pasos para reproducir la infraestructura
+## 📂 Repository Structure
 
-1. Crear bucket S3 sin acceso público  
-2. Habilitar hosting estático en S3  
-3. Subir contenido HTML/CSS/JS  
-4. Crear distribución CloudFront  
-5. Configurar OAC para proteger el bucket  
-6. (Opcional) Conectar dominio vía Route 53  
-7. Probar disponibilidad global  
+cloud-portafolio/
+- project-1/
+  - README.md
+  - diagram.png
+  - index.html
 
----
-
-## 🔒 Seguridad Considerada
-
-- Se utilizó OAC (Origin Access Control) para evitar acceso directo al bucket.  
-- Se configuraron políticas IAM con **principio de mínimo privilegio**.  
-- Se aseguró tráfico HTTPS mediante CloudFront.  
-- Se deshabilitó el acceso público al bucket.
 
 ---
 
-## 📸 Diagrama de Arquitectura
+## 🚀 Deployment Steps
 
-(Agregar aquí arquitectura.png cuando esté lista)
-
----
-
-## 📂 Archivos Incluidos
-
-- `sitio/` → sitio estático (index.html, estilos, imágenes, etc.)  
-- `policy.json` → política IAM aplicada (opcional)  
-- `cloudfront-config.txt` → detalles de configuraciones  
+### 1. Create the S3 bucket
+- Unique bucket name (can match your domain).
+- Disable public access (mandatory).
+- Enable versioning.
+- Upload `index.html`.
 
 ---
 
-## 💡 Cosas que podría agregar en el futuro
-
-- Automatización con Terraform  
-- Automatización con AWS CLI  
-- Landing page más completa  
-- Logging y monitoreo con CloudWatch  
-
----
-
-## 👤 Autor
-
-**Víctor Matos**  
-Cloud & Security Student  
-Certificación: AWS Certified Security – Specialty (SCS-C02)
+### 2. Request SSL certificate with ACM
+- **Region: us-east-1 (N. Virginia)** — CloudFront requires this.
+- Add domains:
+  - `yourdomain.com`
+  - `www.yourdomain.com`
+- Choose **DNS validation**.
 
 ---
 
-## ⭐ Si te gusta este proyecto
+### 3. Validate the certificate in Route 53
+- ACM provides DNS CNAME records.
+- Route 53 can auto-create them.
+- Status will change to **Issued** when ready.
 
-Puedes dejar una estrella ⭐ en el repositorio.
+---
 
+### 4. Configure Origin Access Control (OAC)
+OAC ensures S3 bucket remains private while CloudFront can read it.
+
+- Create OAC
+- Attach OAC to CloudFront origin
+- CloudFront updates bucket policy automatically
+
+---
+
+### 5. Create the CloudFront distribution
+Recommended configuration:
+
+- Origin: S3 bucket with OAC
+- Viewer protocol: **Redirect HTTP to HTTPS**
+- Custom certificate: Select ACM certificate
+- Default root object: `index.html`
+- Enable compression
+- Leave caching defaults or configure later
+
+---
+
+### 6. Configure domain using Route 53
+In your Hosted Zone:
+
+- **A (Alias)** → CloudFront distribution  
+- **AAAA (Alias)** → CloudFront  
+- For `www`:
+  - CNAME → root domain or CloudFront URL
+
+---
+
+### 7. Test the deployment
+Verify:
+
+- HTTPS is working  
+- CloudFront is serving content  
+- DNS resolves correctly  
+- Certificate is valid  
+- S3 bucket is not publicly accessible  
+
+---
+
+## 🌎 Live URL
+
+> Add your website link here once deployed.
+
+---
+
+## 🧠 Skills Demonstrated
+
+✔ AWS Architecture  
+✔ Cloud Security Best Practices  
+✔ SSL/TLS Certificate Management (ACM)  
+✔ DNS & Domain Management (Route 53)  
+✔ CDN Optimization (CloudFront)  
+✔ Serverless Web Hosting  
+✔ Professional Cloud Documentation  
+
+---
+
+## 📬 Contact
+
+LinkedIn: *your-link*  
+GitHub: *your-username*
