@@ -1,12 +1,67 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Sitio Estático en AWS</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0d1117, #1f2937);
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-top: 15px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <h1>¡Sitio estático desplegado en Amazon S3 + CloudFront!</h1>
-  <p>Este sitio es parte de mi portafolio en la nube.</p>
+    <h1>Welcome!</h1>
+    <p>
+        This website is securely delivered using Amazon S3, CloudFront, ACM, and Route 53.<br>
+        Thank you for visiting this cloud portfolio project.
+    </p>
+
+    <div class="footer">
+        Built with ❤ using AWS · Project 1
+    </div>
 </body>
 </html>
