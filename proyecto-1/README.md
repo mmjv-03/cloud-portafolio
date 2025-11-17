@@ -238,5 +238,5 @@ Enable **DNSSEC** in Route 53 to protect your domain from DNS spoofing and tampe
 
 ## 📬 Contact
 
-LinkedIn: https://www.linkedin.com/in/victor-matos-188769242?utm_source=share_via&utm_content=profile&utm_medium=member_ios 
-GitHub: Victor Matos
+- LinkedIn: https://www.linkedin.com/in/victor-matos-188769242?utm_source=share_via&utm_content=profile&utm_medium=member_ios 
+- GitHub: Victor Matos
