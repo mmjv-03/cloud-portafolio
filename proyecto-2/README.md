@@ -72,8 +72,6 @@ cloud-portafolio/
 ### 1. Create the VPC
 - CIDR example: **10.0.0.0/16**
 - Enables isolated network and subnet mapping.  
-- *Nombre descriptivo*  
-- (Captura del VPC creado)
 
 ---
 
@@ -84,13 +82,11 @@ Recommended:
 
 - Public: for NAT gateway  
 - Private: for EC2 instances  
-- *Nombre descriptivo*
 
 ---
 
 ### 3. Internet Gateway (IGW)
 Attach the IGW to the VPC to allow outbound internet from public subnets.  
-*Nombre descriptivo*
 
 ---
 
@@ -104,7 +100,6 @@ Example use cases:
 - Downloading dependencies  
 - API calls  
 
-*Nombre descriptivo*
 
 ---
 
@@ -114,7 +109,8 @@ Example use cases:
 - **Private Route Table** → `0.0.0.0/0` → **NAT Gateway**  
 
 Ensures private workloads never get inbound public traffic.  
-*Nombre descriptivo*
+
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-2/screenshots/Step1-2-3-4-5-VPC.png?raw=true)
 
 ---
 
@@ -127,7 +123,7 @@ Must allow:
 - Optional S3 read/write for agent logs
 
 Attach the role to the EC2 instance.  
-*Nombre descriptivo*
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-2/screenshots/step6-Role-ec2.png?raw=true)
 
 ---
 
@@ -140,7 +136,8 @@ Important settings:
 - Attach EC2 Security Group  
 - SSM Agent-enabled AMI (Amazon Linux 2, Ubuntu 20+, etc.)  
 
-*Nombre descriptivo*
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-2/screenshots/Step7-Launch-EC2-Instance-in-Private-Subnet.png?raw=true
+)
 
 ---
 
@@ -148,9 +145,9 @@ Important settings:
 
 No SSH key pairs, no port 22, no public exposure.
 
-To connect:
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-2/screenshots/Step8.1-Connect-Using-AWS-Systems-Manager.png?raw=true)
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-2/screenshots/step8.2-Connect-Using-AWS-Systems-Manager.png?raw=true)
 
-aws ssm start-session --target <instance-id>
 ### 9. Configure CloudWatch Logging
 
 **Enable:**
@@ -159,7 +156,7 @@ aws ssm start-session --target <instance-id>
 - System logs from EC2 (optional CloudWatch agent)  
 - Audit tracking through CloudTrail  
 
-*Nombre descriptivo*
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-2/screenshots/Step9-Configure-CloudWatch-Logging.png?raw=true)
 
 ---
 
