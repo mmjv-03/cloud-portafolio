@@ -66,6 +66,7 @@ cloud-portafolio/
 - Disable public access (mandatory).
 - Enable versioning.
 - Upload `index.html`.
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-1/screenshots/step1.0-s3-bucket.png?raw=true)
 
 ---
 
