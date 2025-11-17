@@ -53,7 +53,11 @@ Deploy a secure, scalable, Multi-AZ web application using an Auto Scaling Group 
 
 ## 📂 Repository Structure
 
-cloud-portfolio/ └── project-3/ ├── README.md ├── diagram.png └── user-data.sh
+cloud-portfolio/
+- project-3/
+- README.md
+- diagram.png
+- user-data.sh
 
 ---
 
@@ -91,14 +95,14 @@ Key settings:
 * Instances deployed only in private subnets
 * Attach ALB target group
 
-User-data example in `user-data.sh`:
+User-data example in user-data.sh:
 
-#!/bin/bash
-sudo yum update -y
-sudo yum install -y httpd
-echo "<h1>Project 3 — HA Web App</h1>" > /var/www/html/index.html
-sudo systemctl start httpd
-sudo systemctl enable httpd
+- #!/bin/bash
+- sudo yum update -y
+- sudo yum install -y httpd
+- echo Project 3 — HA Web App > /var/www/html/index.html
+- sudo systemctl start httpd
+- sudo systemctl enable httpd
 
 ---
 
