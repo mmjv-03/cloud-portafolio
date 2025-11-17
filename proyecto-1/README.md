@@ -67,6 +67,8 @@ cloud-portafolio/
 - Enable versioning.
 - Upload `index.html`.
 - ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-1/screenshots/step1.0-s3-bucket.png?raw=true)
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-1/screenshots/step1.1-s3-bucket.png?raw=true)
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-1/screenshots/step1.2-s3-bucket.png?raw=true)
 
 ---
 
@@ -76,6 +78,7 @@ cloud-portafolio/
   - `yourdomain.com`
   - `www.yourdomain.com`
 - Choose **DNS validation**.
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-1/screenshots/step2-acm-certificate.png?raw=true)
 
 ---
 
@@ -92,6 +95,8 @@ OAC ensures S3 bucket remains private while CloudFront can read it.
 - Create OAC
 - Attach OAC to CloudFront origin
 - CloudFront updates bucket policy automatically
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-1/screenshots/step4.0-Configure%20Origin-Access-Control.png?raw=true)
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-1/screenshots/step4.1-Configure%20Origin-Access-Control.png?raw=true)
 
 ---
 
@@ -104,6 +109,9 @@ Recommended configuration:
 - Default root object: `index.html`
 - Enable compression
 - Leave caching defaults or configure later
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-1/screenshots/step5.0-CreatetheCloudFrontdistribution.png?raw=true
+)
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-1/screenshots/step5.1-CreatetheCloudFrontdistribution.png?raw=true)
 
 ---
 
@@ -111,9 +119,7 @@ Recommended configuration:
 In your Hosted Zone:
 
 - **A (Alias)** → CloudFront distribution  
-- **AAAA (Alias)** → CloudFront  
-- For `www`:
-  - CNAME → root domain or CloudFront URL
+  - ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-1/screenshots/step6-Configure-domain-using-Route-53.png?raw=true)
 
 ---
 
@@ -124,7 +130,8 @@ Verify:
 - CloudFront is serving content  
 - DNS resolves correctly  
 - Certificate is valid  
-- S3 bucket is not publicly accessible  
+- S3 bucket is not publicly accessible
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-1/screenshots/step7-Test-the-deployment.png?raw=true)
 
 ---
 
