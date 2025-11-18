@@ -2,7 +2,7 @@
 
 This project showcases a key capability in operational excellence and security: **Automated Incident Response**. It demonstrates the implementation of a fully automated, event-driven mechanism to detect security non-compliance (specifically, an overly permissive Security Group rule) and execute immediate, corrective remediation actions using **AWS Systems Manager (SSM)**.
 
-Leveraging SSM Automation Documents provides robust logging, built-in error handling, and superior integration with operational tooling, making this solution highly relevant for CloudOps Engineer roles.
+Leveraging SSM Automation Documents provides robust logging, built-in error handling, and superior integration with operational tooling, making this solution highly relevant for Cloud Security roles.
 
 Technologies used:
 * **AWS Config** — Continuous resource compliance monitoring.
