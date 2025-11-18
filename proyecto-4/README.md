@@ -64,6 +64,9 @@ The process is designed to mimic a real-world security incident response cycle u
         * `AutomationAssumeRole` is set to the ARN of the execution role.
         * `SecurityGroupId` is dynamically mapped to the **`Resource ID`** parameter provided by AWS Config.
     * **Remediation Type:** Configure the action as **Automático** to ensure immediate enforcement without manual intervention.
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-4/screenshots/Step2-rule.png?raw=true)
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-4/screenshots/Step2.1-Parameters.png?raw=true
+)
 
 ### 3. Test and Validate the Automation (The Security Incident)
 
@@ -73,7 +76,12 @@ The process is designed to mimic a real-world security incident response cycle u
     * **Automated Execution:** Within minutes, the **SSM Automation** is triggered automatically (due to the "Automatic" setting).
     * **Verification:** Check the **SSM Automation Execution History** for the successful execution status.
     * **Final State:** The insecure rule must be removed from the Security Group, and Config updates the resource status back to **COMPLIANT**.
-
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-4/screenshots/Step3-SG.png?raw=true)
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-4/screenshots/Step3.1-SSH.png?raw=true)
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-4/screenshots/Step3.2-Remediate.png?raw=true)
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-4/screenshots/Step3.3-Remediate.png?raw=true
+)
+- ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-4/screenshots/Step3.4-Remediate.png?raw=true)
  ---
 
 ## 🧠 Skills Demonstrated
