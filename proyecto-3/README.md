@@ -72,7 +72,7 @@ Recommended layout:
 * 1 Internet Gateway
 * 2 Route Tables (public & private)
 
-![Nombre descriptivo]()
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-3/screenshots/step1-CreateVPC.png?raw=true)
 
 ### 2. Deploy the Application Load Balancer (ALB)
 
@@ -82,7 +82,9 @@ Recommended layout:
 * Target group: EC2 instances (port 80)
 * Health checks: `/`
 
-> **Nombre descriptivo:** Punto de entrada seguro y público para la aplicación.
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-3/screenshots/Step2.0-ALB.png?raw=true)
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-3/screenshots/Step2.1-Listeners.png?raw=true)
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-3/screenshots/Step2.2-TargetGroup.png?raw=true)
 
 ### 3. Configure Auto Scaling Group (ASG)
 
@@ -104,9 +106,9 @@ User-data example in user-data.sh:
 - sudo systemctl start httpd
 - sudo systemctl enable httpd
 
----
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-3/screenshots/Step3-ASG.png?raw=true
+)
 
-> **Nombre descriptivo:** Mecanismo de elasticidad y alta disponibilidad de la capa de aplicación.
 
 ### 4. Create the RDS Database (Multi-AZ)
 
@@ -123,7 +125,8 @@ Database credentials stored in:
 * AWS Secrets Manager **or**
 * SSM Parameter Store
 
-> **Nombre descriptivo:** Base de datos gestionada, privada, y tolerante a fallos de AZ.
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-3/screenshots/Step4-RDS.png?raw=true)
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-3/screenshots/Step4.1-SecretRDS.png?raw=true)
 
 ### 5. Attach AWS WAF to the ALB
 
@@ -136,7 +139,7 @@ Enable security protection rules:
 * Anonymous IP
 * Bot Control (optional)
 
-> **Nombre descriptivo:** Seguridad de capa 7 contra ataques web comunes.
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-3/screenshots/Step5-WAF.png?raw=true)
 
 ### 6. Configure SSM for Secure Access (No SSH Keys)
 
@@ -148,7 +151,7 @@ Enable:
 
 Avoid SSH + key pairs entirely. This ensures zero external attack surface on EC2.
 
-> **Nombre descriptivo:** Implementación del principio de acceso "Zero Trust" a las instancias.
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-3/screenshots/Step6-SSM.png?raw=true)
 
 ### 7. Monitoring & Logging
 
@@ -160,7 +163,6 @@ Configure:
 * ALB access logs → S3
 * WAF logs → CloudWatch or S3
 
-> **Nombre descriptivo:** Observabilidad y alertas proactivas.
 
 ### 8. Test the Deployment
 
@@ -174,7 +176,7 @@ Verify:
 * Only ALB has public exposure
 * SSM Session Manager working correctly
 
-> **Nombre descriptivo:** Validación de la funcionalidad, seguridad y disponibilidad.
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-3/screenshots/Step8-test.png?raw=true)
 
 ## 🌎 Public Load Balancer URL
 
