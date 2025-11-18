@@ -52,7 +52,7 @@ This project showcases skills in:
 
 ### 2. Prepare Resources
 
-* **Create a "Quarantine" Security Group:** A Security Group that explicitly denies all inbound and outbound traffic. This will be used to isolate the compromised instance.
+* **Create a "Quarantine" Security Group:** A Security Group without inbound and outbound rules. This will be used to isolate the compromised instance.
 * **Create the Triage Lambda Function:** Write the Python code (`triage_handler.py`) to:
     * Parse the JSON event from EventBridge (the ASFF finding).
     * Extract the affected EC2 Instance ID.
