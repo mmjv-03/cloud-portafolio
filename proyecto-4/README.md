@@ -45,31 +45,36 @@ This project showcases skills in:
 
 ## 🚀 Deployment and Validation Steps
 
-### 1. Define the SSM Automation Document (The Runbook)
+The process is designed to mimic a real-world security incident response cycle using a highly auditable, managed AWS solution.
 
-* Create an Automation Document (e.g., **`Revoke_Insecure_SSH_Access.yaml`**).
-* The document uses steps like `aws:executeScript` or a specific API action to:
-    * Accept the Security Group ID as an input parameter from AWS Config.
-    * Call the `ec2:RevokeSecurityGroupIngress` action via the `aws:executeAwsApi` step to remove the rule open to `0.0.0.0/0`.
-    * Include a notification step using SNS.
+### 1. Select the AWS Managed Automation Document
 
-### 2. Configure AWS Config and the Remediation Action
+* **Document Used:** `AWSConfigRemediation-RemoveUnrestrictedSourceIngressRules`
+* **Rationale:** This managed document is pre-built by AWS to specifically handle the removal of overly permissive ingress rules, promoting operational efficiency and reliability.
+* **Repository Content Note:** Since a managed document is used, the repository does **not** contain a custom YAML runbook.
 
-* Set up the **AWS Config Rule** (e.g., `restricted-ssh`).
-* Define the **Remediation Action** in Config, specifying:
-    * The target service: **SSM Automation**.
-    * The **Automation Document** to execute.
-    * The **AutomationAssumeRole** (IAM role) with the necessary permissions.
-    * The **Parameter Mapping** to pass the non-compliant `resourceId` (the Security Group ID) to the SSM document.
+### 2. Configure AWS Config and the Automated Remediation Action
 
-### 3. Test and Validate the Automation
+* **Configure the AWS Config Rule:** Set up the managed rule (e.g., `restricted-ssh` or `vpc-security-group-open-to-all`) to monitor EC2 Security Groups for the `0.0.0.0/0` source rule.
+* **Define the Remediation Action:**
+    * **Target Service:** Select **SSM Automation**.
+    * **Automation Document:** Select the AWS managed document: `AWSConfigRemediation-RemoveUnrestrictedSourceIngressRules`.
+    * **Automation Assume Role (IAM Role):** Specify the ARN of the custom, least-privilege IAM role created for this execution.
+    * **Parameter Mapping:**
+        * `AutomationAssumeRole` is set to the ARN of the execution role.
+        * `SecurityGroupId` is dynamically mapped to the **`Resource ID`** parameter provided by AWS Config.
+    * **Remediation Type:** Configure the action as **Automático** to ensure immediate enforcement without manual intervention.
+
+### 3. Test and Validate the Automation (The Security Incident)
 
 * **Test Scenario:** Intentionally create a Security Group with an insecure rule (e.g., **TCP Port 22** access from **`0.0.0.0/0`**).
 * **Validation:**
-    * AWS Config detects the violation and triggers the SSM Automation.
-    * Verify the execution status in the **SSM Automation Dashboard**—it should show **Success**.
-    * Check the Security Group in the EC2 Console; the insecure rule must be removed.
-    * Confirm the **SNS notification** was received, documenting the automated fix and the execution ID.
+    * **Compliance Check:** AWS Config detects the violation and marks the SG as **NON-COMPLIANT**.
+    * **Automated Execution:** Within minutes, the **SSM Automation** is triggered automatically (due to the "Automatic" setting).
+    * **Verification:** Check the **SSM Automation Execution History** for the successful execution status.
+    * **Final State:** The insecure rule must be removed from the Security Group, and Config updates the resource status back to **COMPLIANT**.
+
+ ---
 
 ## 🧠 Skills Demonstrated
 
