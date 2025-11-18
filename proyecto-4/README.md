@@ -15,15 +15,13 @@ Technologies used:
 To establish a proactive and auditable security enforcement system that automatically identifies and resolves common security misconfigurations using a managed operational runbook.
 
 This project showcases skills in:
-* **Operational Automation (SysOps)**
+* **Operational Automation**
 * **Runbook Creation and Management**
 * **Continuous Compliance Monitoring**
-* **Security Automation and Orchestration (SAO)**
+* **Security Automation and Orchestration**
 * **Auditable Remediation**
 
 ## 📌 High-Level Architecture
-
-
 
 > *Self-explanatory visual showing the flow:*
 > 1.  **Non-Compliant Resource:** A new Security Group (SG) is created with SSH access open to the world (`0.0.0.0/0`).
@@ -43,11 +41,14 @@ This project showcases skills in:
 
 ## 📂 Repository Structure
 
-cloud-portafolio/ └── project-4/ ├── README.md ├── diagram.png └── ssm/ └── Revoke_Insecure_SSH_Access.yaml # SSM Automation Document (Runbook)
+- cloud-portafolio
+- project-4
+- EADME.md
+- iagram.png
+
+---
 
 ## 🚀 Deployment and Validation Steps
-
-The use of an SSM Automation Document makes the remediation process highly auditable and visible within the AWS Console.
 
 ### 1. Define the SSM Automation Document (The Runbook)
 
