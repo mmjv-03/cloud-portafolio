@@ -49,6 +49,9 @@ This project showcases skills in:
 
 * Enable **AWS Security Hub** and **Amazon GuardDuty** in the target AWS region.
 * Enable the **AWS Foundational Security Best Practices** standard within Security Hub.
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-5/screenshots/Step1-GuardDuty.png?raw=true)
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-5/screenshots/Step1-SH.png?raw=true)
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-5/screenshots/Step1-standards.png?raw=true)
 
 ### 2. Prepare Resources
 
@@ -58,6 +61,8 @@ This project showcases skills in:
     * Extract the affected EC2 Instance ID.
     * Use Boto3 to attach the **Quarantine SG** to the instance, isolating it.
 * **Create the Lambda IAM Role:** Attach a custom, minimum-privilege policy allowing only `ec2:DescribeInstances`, `ec2:ModifyInstanceAttribute`, and logging permissions.
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-5/screenshots/step2-LambdaCode.png?raw=true)
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-5/screenshots/Step2.1-lambdapolicy.png?raw=true)
 
 ### 3. Configure EventBridge Routing
 
@@ -80,6 +85,7 @@ This project showcases skills in:
     }
     ```
 * **Define the Target:** Set the target as the **Triage Lambda Function**.
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-5/screenshots/Step3-eventbridgerule.png?raw=true)
 
 ### 4. Test and Validate the Automated Response
 
@@ -89,6 +95,9 @@ This project showcases skills in:
     * Verify that the **EventBridge Rule** successfully triggered the Lambda.
     * Check the **CloudWatch Logs** of the Lambda to ensure the containment action executed successfully.
     * Confirm that the **EC2 instance's Security Group** has been switched to the **Quarantine SG**.
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-5/screenshots/Step4-sampleindings.png?raw=true)
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-5/screenshots/Step4.1-Findings.png?raw=true)
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-5/screenshots/Step4-invocations.png?raw=true)
 
 ## 🧠 Skills Demonstrated
 
