@@ -5,7 +5,7 @@ This final project demonstrates the implementation of a **Serverless Security Op
 This architecture is the gold standard for **Security Automation and Orchestration (SAO)**, leveraging the power of event-driven computing to achieve near real-time incident response.
 
 Technologies used:
-* **AWS Security Hub** — Centralized security posture and findings aggregation (ASFF format).
+* **AWS Security Hub CSPM** — Centralized security posture and findings aggregation (ASFF format).
 * **Amazon GuardDuty** — Intelligent threat detection (e.g., unauthorized access, suspicious API calls).
 * **Amazon EventBridge** — Serverless event bus for real-time routing of critical security findings.
 * **AWS Lambda** — Executes the automated containment logic (triage).
