@@ -45,10 +45,11 @@ This project showcases skills in:
 | **IAM** | Defines granular permissions for the Lambda function, allowing it only to query and modify EC2 Security Groups. |
 
 ## 📂 Repository Structure
--cloud-portafolio
--project-5
--README.md
--diagram.png
+
+- cloud-portafolio
+- project-5
+- README.md
+- diagram.png
 
 ## 🚀 Deployment and Validation Steps
 
