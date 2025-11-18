@@ -50,7 +50,7 @@ This project showcases skills in:
 * Enable **AWS Security Hub** and **Amazon GuardDuty** in the target AWS region.
 * Enable the **AWS Foundational Security Best Practices** standard within Security Hub.
 
-![Step1 GuardDuty](screenshots/Step1-GuardDuty.png)
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-5/screenshots/Step1-GuardDuty.png?raw=true)
 ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-5/screenshots/Step1-SH.png?raw=true)
 ![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-5/screenshots/Step1-standards.png?raw=true)
 
