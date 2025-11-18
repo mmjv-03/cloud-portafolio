@@ -23,7 +23,7 @@ This project showcases skills in:
 
 ## 📌 High-Level Architecture
 
-![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-2/Diagram-VPC.png?raw=true)
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-4/Diagram.png?raw=true)
 
 ## 🛠 AWS Services Overview
 
