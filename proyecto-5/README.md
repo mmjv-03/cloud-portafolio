@@ -24,7 +24,7 @@ This project showcases skills in:
 
 ## 📌 High-Level Architecture
 
-![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-5/Diagram.png?raw=true)
+![Diagrama de Arquitectura de Respuesta a Incidentes](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-5/Diagram.png?raw=true)
 
 ## 🛠 AWS Services Overview
 
