@@ -100,6 +100,8 @@ The process is designed to mimic a real-world security incident response cycle u
 4.  **Integration with Ticketing:** Extend the Automation Document to automatically open and close a ticket in an external ITSM system (e.g., Jira, ServiceNow) upon detection and remediation.
 5.  **Multi-Region Deployment:** Ensure the entire stack (Config, SSM, IAM roles) is deployed in all regions where resources are launched.
 
-📬 Contact
-LinkedIn: https://www.linkedin.com/in/victor-matos-188769242?utm_source=share_via&utm_content=profile&utm_medium=member_ios
-GitHub: Victor Matos
+## 📬 Contact
+
+- LinkedIn: https://www.linkedin.com/in/victor-matos-188769242?utm_source=share_via&utm_content=profile&utm_medium=member_ios 
+- GitHub: Victor Matos
+
