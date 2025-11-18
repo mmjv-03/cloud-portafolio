@@ -24,15 +24,7 @@ This project showcases skills in:
 
 ## 📌 High-Level Architecture
 
-
-
-> *Self-explanatory visual showing the flow:*
-> 1.  **Detection:** GuardDuty detects a critical threat (e.g., "Backdoor:EC2/C&CActivity").
-> 2.  **Aggregation:** The finding is immediately sent to Security Hub, standardized into **ASFF**.
-> 3.  **Routing:** An **EventBridge Rule** is configured to filter for all Security Hub findings with a Severity of **HIGH** or **CRITICAL**.
-> 4.  **Action:** The EventBridge rule triggers an **AWS Lambda function** (the "Triage Handler").
-> 5.  **Containment:** The Lambda function extracts the affected EC2 instance ID and modifies its Security Group to a pre-defined **"Quarantine SG"** (which denies all inbound/outbound traffic).
-> 6.  **Notification:** The Lambda function sends an alert via SNS to the security team confirming the containment.
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-5/Diagram.png?raw=true)
 
 ## 🛠 AWS Services Overview
 
