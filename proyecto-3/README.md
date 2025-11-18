@@ -35,7 +35,7 @@ Deploy a secure, scalable, Multi-AZ web application using an Auto Scaling Group 
 
 ### Architecture Diagram
 
-(Insert architecture diagram in `/diagram.png`)
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-3/Diagram.png?raw=true)
 
 ## 🛠 AWS Services Overview
 
