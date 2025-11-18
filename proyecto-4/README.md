@@ -23,12 +23,7 @@ This project showcases skills in:
 
 ## 📌 High-Level Architecture
 
-> *Self-explanatory visual showing the flow:*
-> 1.  **Non-Compliant Resource:** A new Security Group (SG) is created with SSH access open to the world (`0.0.0.0/0`).
-> 2.  **AWS Config Trigger:** AWS Config detects the violation against the defined rule (`restricted-ssh`).
-> 3.  **Remediation Action:** Config triggers a pre-defined **SSM Automation Document**.
-> 4.  **Automated Fix:** The SSM runbook uses the `aws:executeScript` or native actions to modify the SG, removing the insecure rule.
-> 5.  **Notification:** SSM Automation or Config sends an alert via Amazon SNS, notifying the security team of the automated, auditable remediation.
+![Nombre descriptivo](https://github.com/mmjv-03/cloud-portafolio/blob/main/proyecto-2/Diagram-VPC.png?raw=true)
 
 ## 🛠 AWS Services Overview
 
