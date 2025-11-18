@@ -72,7 +72,7 @@ Recommended layout:
 * 1 Internet Gateway
 * 2 Route Tables (public & private)
 
-> **Nombre descriptivo:** Configuración de red base para alta disponibilidad.
+![Nombre descriptivo]()
 
 ### 2. Deploy the Application Load Balancer (ALB)
 
@@ -178,7 +178,7 @@ Verify:
 
 ## 🌎 Public Load Balancer URL
 
-(Add URL once deployed)
+www.cookieprueba.link
 
 ---
 
